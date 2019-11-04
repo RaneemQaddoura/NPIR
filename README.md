@@ -13,7 +13,7 @@ Run
 That command above will install  `sklearn`, `NumPy`, `SciPy`, and `treelib` for
 you.
 
-- If you are installing EvoloPy Toolbox onto Windows, please Install Anaconda from here https://www.continuum.io/downloads, which is the leading open data science platform powered by Python.
+- If you are installing NPIR algorithm onto Windows, please Install Anaconda from here https://www.continuum.io/downloads, which is the leading open data science platform powered by Python.
 
 ## Get the source
 
