@@ -38,4 +38,7 @@ runs = 30
 
 Now your experiment is ready to run. Enjoy!
 
+## NPIR description page
+http://evo-ml.com/2019/10/28/npir/
+
 
