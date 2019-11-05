@@ -1,4 +1,4 @@
-# NPIR: An efficient clustering algorithm based on the k-nearest neighbors with an indexing ratio
+# Nearest Point with Indexing Ratio (NPIR): An efficient clustering algorithm based on the k-nearest neighbors with an indexing ratio
 Nearest Point with Indexing Ratio (NPIR) is a clustering algorithm which explores the characteristics of the data points to group similar data points into the same clusters and dissimilar data points into different clusters. It is based on the nearest neighbor search technique in finding a k-nearest neighbor to a certain point. The algorithm iterates to assign data points to the most suitable clusters. It performs Election, Selection, and Assignment operations to assign data points to appropriate clusters.
 
 ## Installation
