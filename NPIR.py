@@ -152,19 +152,19 @@ def calculate(i):
             nearestIndex,nearestDist = getNearestPoint(electedIndex)
             
             if nearestIndex != None:   
-    
-				distanceVectorIndex[electedIndex] += 1 #In all cases the current index of the distance array should be incremented
-				
-				#check if Nearest already assigned
-				if isPointInCluster(nearestIndex):#The Nearest is already assigned to a cluster
-					if not arePointsInSameCluster(electedIndex, nearestIndex): #Case 3: The Nearest is already assigned to a different cluster than the Elected
-						#check if the Nearest should move to the cluster of the Elected
-						if shouldPointMoveToNearerCluster(nearestIndex, nearestDist): #Case 3b: The distance between the Nearest and the Assigner is greater than the distance between the Nearest and the Elected
-							moveNearestToElectedCluster(electedIndex, nearestIndex, nearestDist) # The Nearest moves to the cluster of the elected
-					else:
-						changeAssigner(nearestIndex, electedIndex, nearestDist)
-				else: #Case 1: The Nearest is not yet assigned to a cluster
-					addNearestToElectedCluster(electedIndex, nearestIndex, nearestDist); #Add the Nearest to the cluster of the Elected
+                
+                distanceVectorIndex[electedIndex] += 1 #In all cases the current index of the distance array should be incremented
+                
+                #check if Nearest already assigned
+                if isPointInCluster(nearestIndex):#The Nearest is already assigned to a cluster
+                    if not arePointsInSameCluster(electedIndex, nearestIndex): #Case 3: The Nearest is already assigned to a different cluster than the Elected
+                        #check if the Nearest should move to the cluster of the Elected
+                        if shouldPointMoveToNearerCluster(nearestIndex, nearestDist): #Case 3b: The distance between the Nearest and the Assigner is greater than the distance between the Nearest and the Elected
+                            moveNearestToElectedCluster(electedIndex, nearestIndex, nearestDist) # The Nearest moves to the cluster of the elected
+                    else:
+                        changeAssigner(nearestIndex, electedIndex, nearestDist)
+                else: #Case 1: The Nearest is not yet assigned to a cluster
+                    addNearestToElectedCluster(electedIndex, nearestIndex, nearestDist); #Add the Nearest to the cluster of the Elected
       	
 def getRandomAssignedPoint():
     """
