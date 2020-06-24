@@ -18,7 +18,7 @@ i = 50
 tStart = datetime.datetime.now()
 
 #data manipulation
-data = np.genfromtxt(filename, delimiter=',')
+data = np.genfromtxt(filename + '.csv', delimiter=',')
 points = data[:,:-1] #list of points
 k = len(np.unique(data[:,-1]))#k: Number of clusters
 labelsTrue = data[:,-1] #List of true class of each points (last field)

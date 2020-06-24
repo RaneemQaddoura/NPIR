@@ -1,6 +1,5 @@
 from sklearn import metrics
 from NPIR import NPIR
-
 import numpy as np
 import datetime
 import warnings
@@ -12,13 +11,14 @@ import plot_surface as surface
 from pathlib import Path
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
+#directories
 datasets_directory = "datasets/"
 results_directory = time.strftime("%Y-%m-%d-%H-%M-%S") + '/'
 Path(results_directory).mkdir(parents=True, exist_ok=True)
  
 # Select data sets
 #"aggregation","aniso","appendicitis","blobs","circles","diagnosis_II","flame","glass","iris","iris2D","jain","liver","moons","mouse","pathbased","seeds","smiley","varied","vary-density","wdbc","wine"
-filenames = ["iris2D.csv","vary-density.csv"]
+filenames = ["iris2D","vary-density"]
 #IR: The indexing ratio to be used for generating the maximum index
 indexing_ratio = [0.1, 0.15]
 #The number of iteration i
@@ -26,7 +26,7 @@ iterations = [30, 50]
 #Choose whether to Export the results in different formats
 # The length of indexing_ratio & iterations lists should be at least 3 for Export_surface to be set as True
 export_flags = {'Export_avg':True, 'Export_best':True, 'Export_details':True, 
-'Export_details_labels':True, 'Export_boxplot':True, 'Export_surface':True}
+'Export_details_labels':True, 'Export_boxplot':True, 'Export_surface':True, 'Export_plot_labels':True}
 #Select number of runs
 NumOfRuns = 5
 
@@ -56,7 +56,7 @@ for filename in filenames:
 		        format = '%m/%d/%y %H:%M:%S'
 		        tStart = datetime.datetime.now()
 		        
-		        data = np.genfromtxt(datasets_directory + filename, delimiter=',')
+		        data = np.genfromtxt(datasets_directory + filename + '.csv', delimiter=',')
 		        points = data[:,:-1] #list of points
 		        k = len(np.unique(data[:,-1]))#k: Number of clusters
 		        labelsTrue = data[:,-1] #List of actual cluster of each points (last field)
@@ -142,9 +142,13 @@ if export_flags['Export_boxplot'] == True:
 
 if export_flags['Export_surface'] == True:
 	ev_measures=['HS', 'CS', 'VM', 'AMI', 'ARI']
-	if len(indexing_ratio) < 3 or len(iterations) < 3:
-		print("The length of indexing_ratio & iterations lists should be at least 3 for the surface to work")
-	else:
-		surface.run(results_directory, indexing_ratio, iterations, filenames, ev_measures)
+	#if len(indexing_ratio) < 3 or len(iterations) < 3:
+	#	print("The length of indexing_ratio & iterations lists should be at least 3 for the surface to work")
+	#else:
+	surface.run(results_directory, indexing_ratio, iterations, filenames, ev_measures)
+
+if export_flags['Export_plot_labels'] == True:
+	print('To be done')
+
 
 

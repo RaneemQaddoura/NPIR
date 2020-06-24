@@ -30,7 +30,7 @@ def run(results_directory, indexing_ratio, iterations, filenames, ev_measures):
              
             plt.legend(handles= box['boxes'], labels=labels_legend, 
                     loc="upper right", bbox_to_anchor=(1.3,1.02))
-            fig_name = results_directory + "/boxplot-" + filename.replace('.csv','') + "-" + measure + ".png"
+            fig_name = results_directory + "/boxplot-" + filename + "-" + measure + ".png"
             plt.savefig(fig_name, bbox_inches='tight')
             plt.clf()
             #plt.show()

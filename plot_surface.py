@@ -22,7 +22,7 @@ def run(results_directory, indexing_ratio, iterations, filenames, ev_measures):
             surf = ax.plot_surface(np.array(indexing_ratio), np.array(iterations), data, cmap='Blues')
             plt.colorbar(surf, shrink=0.7, aspect=7)
 
-            fig_name = results_directory + "/surface-" + filename.replace('.csv','') + "-" + measure + ".png"
+            fig_name = results_directory + "/surface-" + filename + "-" + measure + ".png"
             plt.savefig(fig_name)
             #plt.show()
             plt.clf()
