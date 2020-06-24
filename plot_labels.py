@@ -27,5 +27,5 @@ def run(results_directory, filenames, ev_measures):
                 plt.scatter(data[:, 0], data[:, 1], s=10, color=colors[labels])      
                 fig.savefig(results_directory + "/plot-" + filename + '-best' + measure + '.png') 
                 plt.clf()  
-            else:
-                print('No plot for datatasets with high dimension') 
+        else:
+            print('No plot for datatasets with high dimension') 
