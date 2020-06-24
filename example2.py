@@ -8,6 +8,7 @@ import time
 import csv
 import plot_boxplot as box_plot
 import plot_surface as surface
+import plot_labels
 from pathlib import Path
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
@@ -135,20 +136,18 @@ for filename in filenames:
 		    print("AVG," + avgHS+"," + avgCS +","+ avgVM +"," +avgAMI +"," +avgARI)
 		    print("Best," + bestHS+"," + bestCS +","+ bestVM +"," + bestAMI +"," + bestARI) 
 
-
-if export_flags['Export_boxplot'] == True:
-	ev_measures=['HS', 'CS', 'VM', 'AMI', 'ARI']
+ev_measures=['HS', 'CS', 'VM', 'AMI', 'ARI']
+if export_flags['Export_boxplot'] == True:	
 	box_plot.run(results_directory, indexing_ratio, iterations, filenames, ev_measures)
 
 if export_flags['Export_surface'] == True:
-	ev_measures=['HS', 'CS', 'VM', 'AMI', 'ARI']
-	#if len(indexing_ratio) < 3 or len(iterations) < 3:
-	#	print("The length of indexing_ratio & iterations lists should be at least 3 for the surface to work")
-	#else:
 	surface.run(results_directory, indexing_ratio, iterations, filenames, ev_measures)
 
 if export_flags['Export_plot_labels'] == True:
-	print('To be done')
+	plot_labels.run(results_directory, filenames, ev_measures)
+
+print()
+print('Experiments completed!')
 
 
 
