@@ -44,6 +44,9 @@ http://evo-ml.com/2019/10/28/npir/
 ## Published Article
 https://link.springer.com/article/10.1007%2Fs13042-019-01027-z
 
+## Demo video
+https://www.youtube.com/watch?v=CcP8n4CiTk8
+
 ## Citing NPIR
 Qaddoura, R., Faris, H., & Aljarah, I. (2019). An efficient clustering algorithm based on the k-nearest neighbors with an indexing ratio. International Journal of Machine Learning and Cybernetics, 1-40.
 
